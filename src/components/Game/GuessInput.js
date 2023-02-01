@@ -6,7 +6,7 @@ function GuessInput() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (guess.length < 5) {
+    if (guess.length !== 5) {
       window.alert("Your guess must be at least 5 characters!");
       return;
     }
