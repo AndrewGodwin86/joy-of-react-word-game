@@ -5,8 +5,12 @@ function GuessInput() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log({ guess });
 
+    if (guess.length < 5) {
+      window.alert("Your guess must be at least 5 characters!");
+      return;
+    }
+    console.log({ guess });
     setGuess("");
   }
 
@@ -16,6 +20,8 @@ function GuessInput() {
       <input
         id="guess-input"
         type="text"
+        minLength={5}
+        maxLength={5}
         value={guess}
         onChange={(event) => {
           setGuess(event.target.value.toUpperCase());
